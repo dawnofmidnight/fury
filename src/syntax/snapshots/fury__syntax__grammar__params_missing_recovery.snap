@@ -1,0 +1,40 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"fn foo(x: , y Bool) = true;\")"
+---
+Root@0..27
+  Fn@0..27
+    FnKw@0..2 "fn"
+    Whitespace@2..3 " "
+    Ident@3..6 "foo"
+    ParamList@6..19
+      OpenParen@6..7 "("
+      Param@7..11
+        Ident@7..8 "x"
+        Colon@8..9 ":"
+        Whitespace@9..10 " "
+        TypeExpr@10..10
+        Comma@10..11 ","
+      Whitespace@11..12 " "
+      Param@12..18
+        Ident@12..13 "y"
+        Whitespace@13..14 " "
+        TypeExpr@14..18
+          Ident@14..18 "Bool"
+      CloseParen@18..19 ")"
+    Whitespace@19..20 " "
+    Equal@20..21 "="
+    Whitespace@21..22 " "
+    ExprLiteral@22..26
+      BoolLiteral@22..26 "true"
+    Semi@26..27 ";"
+
+error: expected an identifier, found `,`
+  ╭─[<test>:1:11]
+1 │ fn foo(x: , y Bool) = true;
+  │
+
+error: expected `:`, found an identifier
+  ╭─[<test>:1:15]
+1 │ fn foo(x: , y Bool) = true;
+  │

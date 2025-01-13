@@ -1,0 +1,6 @@
+//! The Fury standard library.
+
+pub mod boolean;
+pub mod comparison;
+pub mod operators;
+pub mod optional;

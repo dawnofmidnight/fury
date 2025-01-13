@@ -1,0 +1,23 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"fn foo() -> Bool = true;\")"
+---
+Root@0..24
+  Fn@0..24
+    FnKw@0..2 "fn"
+    Whitespace@2..3 " "
+    Ident@3..6 "foo"
+    ParamList@6..8
+      OpenParen@6..7 "("
+      CloseParen@7..8 ")"
+    Whitespace@8..9 " "
+    Arrow@9..11 "->"
+    Whitespace@11..12 " "
+    TypeExpr@12..16
+      Ident@12..16 "Bool"
+    Whitespace@16..17 " "
+    Equal@17..18 "="
+    Whitespace@18..19 " "
+    ExprLiteral@19..23
+      BoolLiteral@19..23 "true"
+    Semi@23..24 ";"

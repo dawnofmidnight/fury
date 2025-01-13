@@ -1,0 +1,5 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"\")"
+---
+Root@0..0

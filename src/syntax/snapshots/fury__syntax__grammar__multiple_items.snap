@@ -1,0 +1,32 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"fn foo() = true;\\nfn bar() = false;\")"
+---
+Root@0..34
+  Fn@0..16
+    FnKw@0..2 "fn"
+    Whitespace@2..3 " "
+    Ident@3..6 "foo"
+    ParamList@6..8
+      OpenParen@6..7 "("
+      CloseParen@7..8 ")"
+    Whitespace@8..9 " "
+    Equal@9..10 "="
+    Whitespace@10..11 " "
+    ExprLiteral@11..15
+      BoolLiteral@11..15 "true"
+    Semi@15..16 ";"
+  Whitespace@16..17 "\n"
+  Fn@17..34
+    FnKw@17..19 "fn"
+    Whitespace@19..20 " "
+    Ident@20..23 "bar"
+    ParamList@23..25
+      OpenParen@23..24 "("
+      CloseParen@24..25 ")"
+    Whitespace@25..26 " "
+    Equal@26..27 "="
+    Whitespace@27..28 " "
+    ExprLiteral@28..33
+      BoolLiteral@28..33 "false"
+    Semi@33..34 ";"

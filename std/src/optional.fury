@@ -1,0 +1,16 @@
+//! An optional value.
+//!
+//! The `Optional` type represents an optional value with two variants: it is
+//! either `Some` and contains a value, or `None` and does not.
+
+// use Optional.[Some, None];
+
+/// An optional value. See the module-level documentation for more details.
+type Optional(A) = Some(A) | None;
+
+/// Maps an `Optional(A)` to an `Optional(B)` by applying a function `f` to a
+/// value (if `Some`) or returning `None` (if `None`).
+fn map(o: Optional(A), f: Fn(A) -> B) -> Optional(B) with [A, B] = match o {
+    Some(x) => Some(f(x)),
+    None => None,
+}

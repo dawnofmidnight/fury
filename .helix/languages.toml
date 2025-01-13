@@ -1,0 +1,12 @@
+[language-server.fury]
+command = "fury"
+args = ["lsp"]
+
+[[language]]
+name = "fury"
+scope = "source.fury"
+injection-regex = "fury"
+file-types = ["fury"]
+comment-tokens = "//"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["fury"]

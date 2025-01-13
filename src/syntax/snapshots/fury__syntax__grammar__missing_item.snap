@@ -1,0 +1,12 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"awawa\")"
+---
+Root@0..5
+  Ident@0..5 "awawa"
+
+error: expected an item, found an identifier
+  ╭─[<test>:1:1]
+1 │ awawa
+  │
+  = an item can start with `fn`

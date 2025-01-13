@@ -1,0 +1,23 @@
+---
+source: src/syntax/grammar.rs
+expression: "test_output(\"fn foo() = { bar };\")"
+---
+Root@0..19
+  Fn@0..19
+    FnKw@0..2 "fn"
+    Whitespace@2..3 " "
+    Ident@3..6 "foo"
+    ParamList@6..8
+      OpenParen@6..7 "("
+      CloseParen@7..8 ")"
+    Whitespace@8..9 " "
+    Equal@9..10 "="
+    Whitespace@10..11 " "
+    ExprGroup@11..18
+      OpenBrace@11..12 "{"
+      Whitespace@12..13 " "
+      ExprName@13..16
+        Ident@13..16 "bar"
+      Whitespace@16..17 " "
+      CloseBrace@17..18 "}"
+    Semi@18..19 ";"

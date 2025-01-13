@@ -1,0 +1,3 @@
+//! The standard library prelude. Every Fury program has an implicit `use
+//! std.prelude.*` at the start.
+

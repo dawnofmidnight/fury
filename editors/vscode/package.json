@@ -1,0 +1,79 @@
+{
+    "name": "vscode-fury",
+    "displayName": "Fury",
+    "description": "The Fury language server.",
+    "author": "dawnofmidnight",
+    "publisher": "dawnofmidnight",
+    "license": "MIT",
+    "version": "0.0.0",
+    "repository": "https://github.com/dawnofmidnight/fury",
+    "engines": {
+        "vscode": "^1.89.0"
+    },
+    "main": "./out/main",
+    "scripts": {
+        "build": "esbuild ./src/main.ts --bundle --outfile=./out/main.js --external:vscode --platform=node --target=node22 --minify",
+        "package": "vsce package --skip-license -o"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^9.0.1"
+    },
+    "devDependencies": {
+        "@tsconfig/strictest": "^2.0.5",
+        "@types/node": "^22.13.10",
+        "@types/vscode": "^1.89.0",
+        "@vscode/vsce": "^3.3.0",
+        "esbuild": "^0.25.1",
+        "typescript": "^5.4.5"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "fury",
+                "aliases": [
+                    "Fury",
+                    "fury"
+                ],
+                "extensions": [
+                    ".fury"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Fury",
+            "properties": {
+                "fury.path": {
+                    "type": "string",
+                    "default": null,
+                    "description": "The path to the Fury executable.",
+                    "scope": "window"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "fury.restartServer",
+                "title": "Restart Server",
+                "category": "Fury"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "fury.startServer",
+                    "when": "inFuryProject"
+                },
+                {
+                    "command": "fury.stopServer",
+                    "when": "inFuryProject"
+                },
+                {
+                    "command": "fury.restartServer",
+                    "when": "inFuryProject"
+                }
+            ]
+        }
+    }
+}

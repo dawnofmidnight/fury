@@ -1,0 +1,19 @@
+// use lib.[boolean.Boolean, Comparison.[Less, Equal, Greater]];
+
+// pub trait Equals(Right) with Right = [
+//     fun equals(left: Self, right: Right) -> Boolean,
+//     fun not_equals(left: Self, right: Right) -> Boolean = ~equals(left, right),
+// ];
+
+// pub type Comparison = Less | Equal | Greater;
+
+// pub trait Compare(Right) with [
+//     Right,
+//     Self: Equals(Right),
+// ] = [
+//     fun compare(left: Self, right: Right) -> Comparison,
+//     fun less(left: Self, right: Right) -> Boolean = compare(left, right) == Less,
+//     fun less_equal(left: Self, right: Right) -> Boolean = compare(left, right) != Greater,
+//     fun greater(left: Self, right: Right) -> Boolean = compare(left, right) == Greater,
+//     fun greater_equal(left: Self, right: Right) -> Boolean = compare(left, right) != Less,
+// ];
